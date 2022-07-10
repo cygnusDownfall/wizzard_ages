@@ -1,23 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class plotAccess
-{
-    public string[] tientrinhplot;
-    public int currentplot=0;
-    public void next()
-    {
-        currentplot++;
-    }
-}
+
 public class character : MonoBehaviour
 {
     public GameController GameController;
     public HPbar HPbar;
     public Animation enemyani;
     public int level = 1;
-    public bool male=true;
+    public bool male = true;
     public string namecharacter;
 
     public plotAccess plot;
@@ -31,9 +22,9 @@ public class character : MonoBehaviour
     public float HP, MP, Atk, Def;
     public float buffdmg = 1;
 
-    public float maxHP,maxMP;
+    public float maxHP, maxMP;
 
-    public int power_magic, master_magic, intelligion, life, power_spirit,mastery_taijutsu;
+    public int power_magic, master_magic, intelligion, life, power_spirit, mastery_taijutsu;
 
     private void Awake()
     {
@@ -42,7 +33,8 @@ public class character : MonoBehaviour
         if (PlayerPrefs.GetInt("isNewGame") == 1)
         {
             namecharacter = PlayerPrefs.GetString("name");
-            switch (PlayerPrefs.GetInt("classofchar")) {
+            switch (PlayerPrefs.GetInt("classofchar"))
+            {
                 case 0:
                     {
                         Class = classs[0];
@@ -86,7 +78,8 @@ public class character : MonoBehaviour
 
 
             GetComponentInChildren<SpriteRenderer>().sprite = (male) ? Class.malesprite : Class.femalesprite;
-        }else
+        }
+        else
         {
             GameController.loadgame(PlayerPrefs.GetInt("keysave"));
         }
@@ -108,25 +101,25 @@ public class character : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+
     }
 
     public void askill1()
-    {      
-        if(currenttarget!=null)
-            currenttarget.HP-=buffdmg * Class.skills[0].SkillTrigger(this);
+    {
+        if (currenttarget != null)
+            currenttarget.HP -= buffdmg * Class.skills[0].SkillTrigger(this);
     }
     public void askill2()
     {
         if (currenttarget != null)
             currenttarget.HP -= buffdmg * Class.skills[2].SkillTrigger(this);
-        
+
     }
     public void askill3()
     {
         if (currenttarget != null)
-            currenttarget.HP -=buffdmg * Class.skills[4].SkillTrigger(this);
-        
+            currenttarget.HP -= buffdmg * Class.skills[4].SkillTrigger(this);
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -138,7 +131,7 @@ public class character : MonoBehaviour
             {
                 currenttarget = enemies[0];
             }
-            
+
             //enemyani.Play();
         }
     }
@@ -157,7 +150,7 @@ public class character : MonoBehaviour
             enemies.Remove(collision.GetComponent<Enemy>());
         }
     }
-   
+
     public void changeTarget()
     {
         if (enemies == null)
@@ -176,6 +169,6 @@ public class character : MonoBehaviour
                 }
             }
         }
-        
+
     }
 }
