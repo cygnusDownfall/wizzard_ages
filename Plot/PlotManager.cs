@@ -1,17 +1,34 @@
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 public class PlotManager:MonoBehaviour
 {
-    public string sentence;
-    public string talker;
+    public List<string> sentences;
+    public string talkers;
+    //dung de load chuong
     public int chapter;
-    public void loadPlot()
+
+    public TMPro.TMP_Text sentence;
+    public TMPro.TMP_Text talker;
+
+    public IEnumerable<int> loadPlot()
     {
-        string path = "chuong"+chapter;
+        int numstsentences=0;
+        string path = @"Assets\Plot\chuong" + chapter+".txt";
+
+        using (StreamReader streamReader = new StreamReader(path)) {
+            string line;
+            while ((line =streamReader.ReadLine() )!= null)
+            {
+                sentences.Add(line);
+                numstsentences++;
+                yield return numstsentences-1;
+            }
+            streamReader.Close();
+        }
         
-        FileStream datastream = new FileStream(path,FileMode.Open);
-        //TextReader textReader = datastream.Read();
+        // yield return numstsentences;
     }
 }
 public class plotAccess
