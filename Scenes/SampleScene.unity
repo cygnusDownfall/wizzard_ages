@@ -134,6 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e841d3059a2ce4ebe2e312e494a003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &429185553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7592495614539867113, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
+  m_PrefabInstance: {fileID: 3943536028108009509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &845254424
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,9 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49e91dbdb7f8a54a829b9a726676e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentence: 
-  talker: 
+  sentences: []
   chapter: 0
+  sentence: {fileID: 1205093111}
+  talker: {fileID: 429185553}
 --- !u!4 &845254426
 Transform:
   m_ObjectHideFlags: 0
@@ -206,6 +218,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c390afde6b0f5248956974afe9a09a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1205093111 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 933646525238233369, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
+  m_PrefabInstance: {fileID: 3943536028108009509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1577132718 stripped
@@ -405,6 +428,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 933646525238233369, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3943536027391725888, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
       propertyPath: m_Name
       value: Main-Camera
@@ -525,6 +552,22 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 940022148}
+    - target: {fileID: 7592495614539867113, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592495614539867113, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592495614539867113, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592495614539867113, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89f2e551b9dcc2a4fa632227335e6b4a, type: 3}
 --- !u!1001 &5752022720890565867
