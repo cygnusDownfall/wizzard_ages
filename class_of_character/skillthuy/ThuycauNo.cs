@@ -11,6 +11,10 @@ public class ThuycauNo : MonoBehaviour
     private void Start()
     {
         enemies = new List<Enemy>();
+       
+    }
+    private void Update()
+    {
         if (transform.position == target.position)
         {
             explode();
@@ -18,7 +22,7 @@ public class ThuycauNo : MonoBehaviour
         else
         {
             //bug
-            gameObject.GetComponent<Rigidbody2D>().velocity= Vector3.Lerp(target.position, transform.position, 1)*Time.deltaTime*speed ;
+            transform.Translate(target.position*Time.deltaTime);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

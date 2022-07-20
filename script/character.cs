@@ -112,13 +112,13 @@ public class character : MonoBehaviour
     public void askill2()
     {
         if (currenttarget != null)
-            currenttarget.HP -= buffdmg * Class.skills[2].SkillTrigger(this);
+            currenttarget.HP -= buffdmg * Class.skills[1].SkillTrigger(this);
 
     }
     public void askill3()
     {
         if (currenttarget != null)
-            currenttarget.HP -= buffdmg * Class.skills[4].SkillTrigger(this);
+            currenttarget.HP -= buffdmg * Class.skills[2].SkillTrigger(this);
 
     }
 

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 public class PlotManager : MonoBehaviour
 {
+    public GameObject plotUI;
     public List<string> sentences;
     //dung de load chuong
     public int chapter;
-
+    public int currentSentence;
     public TMPro.TMP_Text sentence;
     public TMPro.TMP_Text talker;
 
@@ -29,22 +30,32 @@ public class PlotManager : MonoBehaviour
     }
     public void showDialog(int indexsentence)
     {
+        int n = sentences[indexsentence].Length;
+        currentsentence(n);
+        plotUI.SetActive(true);
         bool istalker = true;
-        for ( int i = 0,n = sentences[indexsentence].Length; i < n; i++)
+        for ( int i = 0; i < n; i++)
         {
             if (sentences[indexsentence][i] == ':')
             {
                 istalker = false;
+                continue;
             }
             if (istalker)
             {
-                talker.text += sentences[indexsentence][i];
+                talker.text+= sentences[indexsentence][i];
             }else
             {
                 sentence.text+= sentences[indexsentence][i];
             }
            
         }
+        
+    }
+    IEnumerable<int> currentsentence(int max)
+    {
+        for(int i = 0; i < max; i++) 
+        yield return i;
     }
 }
 
