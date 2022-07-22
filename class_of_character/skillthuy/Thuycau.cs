@@ -49,51 +49,51 @@ public class Thuycau :skill
     }
     public float cap1(float atk, character character)
     {
-        GameObject bongbong = Instantiate(bubble, character.transform);
+        GameObject bongbong = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         //tra ve luong dmg gay ra
         return 120/100* lv * atk;
     }
     public float cap2(float atk, character character)
     {
-        GameObject bongbong = Instantiate(bubble, character.transform);
+        GameObject bongbong = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         return 130 / 100 * lv * atk;
     }
     public float cap3(float atk, character character)
     {
-        GameObject bongbong = Instantiate(bubble, character.transform);
+        GameObject bongbong = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         return 140 / 100 * lv * atk;
     }
     public float cap4(float atk, character character)
     {
-        GameObject bongbong = Instantiate(bubble, character.transform);
+        GameObject bongbong = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         return 155 / 100 * lv * atk;
     }
     public float cap5(float atk, character character)
     {
-        GameObject bongbong = Instantiate(bubble, character.transform);
+        GameObject bongbong = Instantiate(bubble, character.transform.position,Quaternion.identity);
         bongbong.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         impactskill.delay(1);
-        GameObject bongbong2 = Instantiate(bubble, character.transform);
+        GameObject bongbong2 = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong2.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         impactskill.delay(1);
-        GameObject bongbong3 = Instantiate(bubble, character.transform);
+        GameObject bongbong3 = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong3.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
 
         return 155 / 100 * lv * atk +2*75/100*(155 / 100 * lv * atk);
     }
     public float cap6(float atk,character character)
     {
-        GameObject bongbong = Instantiate(bubble, character.transform);
+        GameObject bongbong = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         impactskill.delay(1);
-        GameObject bongbong2 = Instantiate(bubble, character.transform);
+        GameObject bongbong2 = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong2.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
         impactskill.delay(1);
-        GameObject bongbong3 = Instantiate(bubble, character.transform);
+        GameObject bongbong3 = Instantiate(bubble, character.transform.position, Quaternion.identity);
         bongbong3.GetComponent<ThuycauNo>().target = character.currenttarget.gameObject.transform;
 
         bongbong.GetComponent<ThuycauNo>().dmg = 150 / 100 * atk;

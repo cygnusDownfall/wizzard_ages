@@ -1,9 +1,11 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ThuycauNo : MonoBehaviour
 {
     public float dmg;
+    public int lv;
     public float speed;
     public Transform target;
     public Animation Explode;
@@ -11,22 +13,20 @@ public class ThuycauNo : MonoBehaviour
     private void Start()
     {
         enemies = new List<Enemy>();
-       
+
     }
     private void Update()
     {
-        if (transform.position == target.position)
+        Vector2 move = target.position-transform.position ;
+        transform.Translate(move* Time.deltaTime*speed);
+        if (Mathf.Abs(transform.position.x - target.position.x) < 1)
         {
             explode();
-        }
-        else
-        {
-            //bug
-            transform.Translate(target.position*Time.deltaTime);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("enter");
         if (collision.tag == "enemy")
         {
             enemies.Add(collision.gameObject.GetComponent<Enemy>());
@@ -42,14 +42,19 @@ public class ThuycauNo : MonoBehaviour
     public void explode()
     {
         //play  animations
-
-        //caculate dmg
-        foreach(Enemy enemy in enemies)
+        if (lv>=5)
         {
-            enemy.HP -= dmg;
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.HP -= dmg;
+            }
         }
+        
+        //caculate dmg
+        
         //destroy this
         Destroy(this.gameObject);
-        
+
     }
+  
 }

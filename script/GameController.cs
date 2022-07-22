@@ -44,21 +44,6 @@ public class GameController : MonoBehaviour
 
 
 
-    public void makeDmg(GameObject target, long dmg)
-    {
-        try
-        {
-            Enemy enemy = target.GetComponent<Enemy>();
-            enemy.HP -= dmg;
-            enemy.HPbar.setHP();
-        }
-        catch
-        {
-            character character = target.GetComponent<character>();
-            character.HP -= dmg;
-            character.HPbar.setHP();
-        }
-
-    }
+   
 
 }
