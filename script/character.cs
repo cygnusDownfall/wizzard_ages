@@ -5,7 +5,7 @@ using UnityEngine;
 public class character : MonoBehaviour
 {
     public GameController GameController;
-    public HPbar HPbar;
+    public statusbarController statusbarController;
     public Animation enemyani;
     public int level = 1;
     public bool male = true;
@@ -98,7 +98,17 @@ public class character : MonoBehaviour
         {
             askill1();
         }
+        
     }
+
+    public void takedmgEvent(float dmg)
+    {
+        HP -= dmg;
+        statusbarController.setHP();
+    }
+
+
+
     private void FixedUpdate()
     {
 

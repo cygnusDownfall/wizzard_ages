@@ -5,14 +5,20 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject HPcurrnentUI;
-    public float HP, maxHP, maxMP, MP, atk;
+    public float HP, maxHP,  atk;
+    public float rangeAttack=2;
     public kindofenemy kindenemy;
     public bool attackstate = false;
     public character character;
     Rigidbody2D rigidbody2d;
     private void Update()
     {
-        updateHPUI();
+        if (HP != maxHP)
+        {
+            updateHPUI((maxHP - HP) * 5 / maxHP);
+
+        }
+        
 
     }
 
@@ -25,8 +31,6 @@ public class Enemy : MonoBehaviour
     {
         maxHP = kindenemy.HP;
         HP = kindenemy.HP;
-        MP = kindenemy.MP;
-        maxMP = kindenemy.MP;
         atk = kindenemy.atk;
     }
     public IEnumerator attack()
@@ -35,10 +39,12 @@ public class Enemy : MonoBehaviour
         {
 
             kindenemy.movetoplayer(character.gameObject, rigidbody2d, transform);
-            if (Mathf.Abs(character.transform.position.x - transform.position.x) < 1)
+            if (Mathf.Abs(character.transform.position.x - transform.position.x) <= rangeAttack)
             {
-                character.HP -= atk;
-                character.HPbar.setHP();
+                //chay animation attack
+
+                //tinh dmg
+                character.takedmgEvent(atk);
             }
             
             //Debug.Log("cccc");
@@ -77,10 +83,27 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void updateHPUI()
+    public void Reset()
     {
-        HPcurrnentUI.transform.localScale =new Vector3( (maxHP - HP) * 5 / maxHP,1,1);
-        
+        HP = maxHP;
+        updateHPUI(0);
+    }
+
+    void updateHPUI(float X)
+    {
+        HPcurrnentUI.transform.localScale =new Vector3(X,1,1);
+        if (HP < maxHP*70 / 100 )
+        {
+            Debug.Log(HP);
+            HPcurrnentUI.GetComponent<SpriteRenderer>().color = new Color(255, 160, 0);
+        }else if (HP < maxHP*30 / 100 )
+        {
+            HPcurrnentUI.GetComponent<SpriteRenderer>().color = new Color(255,0, 0);
+        }else
+        {
+           
+            HPcurrnentUI.GetComponent<SpriteRenderer>().color = new Color(255, 255, 0);
+        }
     }
 
 }

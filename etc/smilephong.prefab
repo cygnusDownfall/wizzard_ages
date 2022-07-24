@@ -53,8 +53,6 @@ MonoBehaviour:
   HPcurrnentUI: {fileID: 5662748380260670906}
   HP: 0
   maxHP: 0
-  maxMP: 0
-  MP: 0
   atk: 0
   kindenemy: {fileID: 11400000, guid: 24050a51e4f256b43a9df85f335d14e0, type: 2}
   attackstate: 0
@@ -278,7 +276,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9262408, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
