@@ -51,12 +51,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPcurrnentUI: {fileID: 5662748380260670906}
+  character: {fileID: 0}
+  attackstate: 0
   HP: 0
   maxHP: 0
   atk: 0
+  rangeAttack: 2
   kindenemy: {fileID: 11400000, guid: 24050a51e4f256b43a9df85f335d14e0, type: 2}
-  attackstate: 0
-  character: {fileID: 0}
 --- !u!61 &934109720437615667
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -361,7 +362,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.35686275}
+  m_Color: {r: 0.990566, g: 0.95706135, b: 0.33081162, a: 0.16862746}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
