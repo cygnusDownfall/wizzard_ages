@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
         
         if (HP != maxHP)
         {
+            
             if (HP <= 0)
             {
                 updateHPUI(5);
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
     }
     void OnDie()
     {
-
+        Animator.SetBool("Die",true);
     }
     private void Start()
     {
@@ -75,17 +76,8 @@ public class Enemy : MonoBehaviour
 
         if (collision.tag == "Player")
         {
-
-
-            //attackstate = true;
-
-            //play animation attack 
-
-
+            Animator.SetBool("beattacked", true);
             StartCoroutine("attack");
-
-
-
         }
 
     }
@@ -93,8 +85,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            //attackstate = false;
-           
+            Animator.SetBool("beattacked",false);
             StopCoroutine("attack");
         }
     }
@@ -103,6 +94,7 @@ public class Enemy : MonoBehaviour
     {
         HP = maxHP;
         updateHPUI(0);
+        Animator.SetBool("Die", false);
     }
 
     void updateHPUI(float X)

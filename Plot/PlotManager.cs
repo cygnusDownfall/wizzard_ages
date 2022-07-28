@@ -14,6 +14,7 @@ public class PlotManager : MonoBehaviour
 
     public void loadPlot()
     {
+        sentences.Clear();
         string path = @"Assets\Plot\chuong" + chapter + ".txt";
 
         using (StreamReader streamReader = new StreamReader(path))
