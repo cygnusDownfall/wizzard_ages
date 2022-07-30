@@ -10,7 +10,7 @@ public class nenmenuController : MonoBehaviour
     }
     private void Update()
     {
-        currentcloud.transform.Translate(new Vector3(1, 0, 0));
+        currentcloud.transform.Translate(new Vector3(1, 0, 0)*Time.deltaTime);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -22,7 +22,7 @@ public class nenmenuController : MonoBehaviour
     }
     void SpawnCloud()
     {
-        currentcloud = Instantiate(cloud, GameObject.FindGameObjectWithTag("spawnClouds").transform);
+        currentcloud = Instantiate(cloud, GameObject.FindGameObjectWithTag("spawnClouds").transform.position,Quaternion.identity);
         currentcloud.tag = "cloud";
     }
 }
